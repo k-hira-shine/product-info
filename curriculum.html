@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>カリキュラムラフ v1.2（90本×5分）— 2026-06-11</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",sans-serif; background:#f4f6f9; color:#2b3a4a; padding:24px; }
+  .page { max-width:1120px; margin:0 auto; }
+  header { background:linear-gradient(135deg,#1d3557,#2a6f97); color:#fff; border-radius:14px; padding:22px 28px; margin-bottom:18px; }
+  header h1 { font-size:24px; letter-spacing:1px; }
+  header .sub { margin-top:10px; font-size:13px; opacity:.9; }
+  header .badge { display:inline-block; background:#ffb703; color:#1d3557; font-weight:bold; font-size:12px; border-radius:20px; padding:3px 12px; margin-right:8px; }
+  h2 { font-size:16px; color:#1d3557; border-left:6px solid #2a6f97; padding-left:10px; margin:24px 0 12px; }
+  .card { background:#fff; border-radius:12px; padding:16px 20px; box-shadow:0 2px 6px rgba(0,0,0,.06); }
+  table { width:100%; border-collapse:collapse; font-size:13px; }
+  th { background:#e8f0f7; color:#1d3557; padding:7px 10px; text-align:left; border-bottom:2px solid #2a6f97; }
+  td { padding:7px 10px; border-bottom:1px solid #e5e9ef; vertical-align:top; }
+  .flow { display:flex; gap:10px; margin-top:8px; align-items:stretch; flex-wrap:wrap; }
+  .flow .fbox { flex:1; min-width:180px; border-radius:10px; padding:12px 14px; color:#fff; font-size:12.5px; line-height:1.6; }
+  .flow .fb0 { background:#8d99ae; }
+  .flow .fb1 { background:#339af0; }
+  .flow .fb2 { background:#1c7ed6; }
+  .flow .fb3 { background:#1d3557; }
+  .flow b { font-size:14px; display:block; margin-bottom:4px; }
+  .flow .tag { display:inline-block; background:rgba(255,255,255,.25); border-radius:10px; padding:1px 8px; font-size:10.5px; margin-bottom:6px; }
+  .stairs { display:flex; align-items:flex-end; gap:8px; margin-top:8px; }
+  .stair { flex:1; border-radius:10px 10px 0 0; color:#fff; padding:10px 8px 8px; text-align:center; }
+  .stair .t { font-weight:bold; font-size:13px; }
+  .stair .d { font-size:11px; margin-top:4px; opacity:.92; line-height:1.5; }
+  .stair .days { font-size:10px; margin-top:4px; background:rgba(255,255,255,.25); border-radius:10px; padding:2px 6px; display:inline-block; }
+  .s1 { height:130px; background:#4dabf7; }
+  .s2 { height:165px; background:#339af0; }
+  .s3 { height:200px; background:#1c7ed6; }
+  .s4 { height:235px; background:#1d3557; }
+  .s5 { height:265px; background:#6a4c93; }
+  /* 章ごとのレッスン表 */
+  .chap { margin-top:18px; border-radius:12px; overflow:hidden; box-shadow:0 2px 6px rgba(0,0,0,.06); }
+  .chap-head { color:#fff; padding:12px 18px; display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:6px; }
+  .chap-head .ct { font-size:15px; font-weight:bold; }
+  .chap-head .cg { font-size:12px; opacity:.92; }
+  .c1 .chap-head { background:#4dabf7; color:#0f3050; }
+  .c2 .chap-head { background:#339af0; }
+  .c3 .chap-head { background:#1c7ed6; }
+  .c4 .chap-head { background:#1d3557; }
+  .chap table { background:#fff; font-size:12px; }
+  .chap th { font-size:12px; }
+  .chap td.day { white-space:nowrap; font-weight:bold; color:#1d3557; width:52px; }
+  .chap td.tt { font-weight:bold; width:26%; }
+  .chap td.hw { color:#5a6b7c; width:24%; }
+  .milestone td { background:#fff8e6; }
+  .milestone td.tt::after { content:" ★提出の山"; color:#c1121f; font-size:11px; }
+  ul { padding-left:18px; font-size:13px; line-height:1.8; }
+  footer { text-align:center; font-size:11px; color:#8a96a3; margin-top:18px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <h1>カリキュラムラフ — 90本×5分・宿題付き（全レッスン一覧）</h1>
+  <div class="sub">
+    <span class="badge">90日でレッスン完結</span>
+    <span class="badge">基礎はYouTube無料動画に任せ「作る」に全振り</span>
+    <span class="badge">売るのは操作ではなく「考え方と型」</span>
+    2026-06-11 ／ ラフ＝調整前提のたたき台
+  </div>
+</header>
+
+<h2>① 商品フォーマット</h2>
+<div class="card">
+<table>
+  <tr><th style="width:20%;">要素</th><th>内容</th></tr>
+  <tr><td>本数・尺</td><td><b>90本 × 動画5分以内＋実践10〜30分</b>（1日1本×90日でレッスン完結。遅れても自分のペースで進めればOK）</td></tr>
+  <tr><td>考え方</td><td>Geminiの基礎操作・業務別の時短Howは<b>YouTubeの無料動画（基礎プレイリスト）に任せる</b>。講座は「自分の場合への翻訳」＝<b>自分専用AIとツールを作ること</b>に全振り。教えるのは操作ではなく、<b>ツールが変わっても使える「考え方と型」</b>（頼み方・業務分解・「動けばいい」開発・聞き方）</td></tr>
+  <tr><td>構成</td><td><b>型10本 → 自分専用AI（Gem）20本 → ツール開発（Cursor）60本</b></td></tr>
+  <tr><td>講座後</td><td><b>4ヶ月目〜は実戦開発を壁打ちで伴走</b>（自分の業務でツールを作り続ける期間）</td></tr>
+  <tr><td>宿題</td><td>毎レッスン宿題＋提出。提出の山は<b>Day29（自分専用AIセット）／Day60（ツール1号・2号）／Day88（卒業制作）</b>の3つ</td></tr>
+  <tr><td>1レッスンの作り</td><td>スライド1〜2枚＋ほぼ動かない映像＋<b>ルナの声</b>（音声生成）→ 収録レスで量産</td></tr>
+  <tr><td>約束する変化</td><td>AIに任せる型を持つ → <b>自分専用AI</b>を持つ → <b>自分専用ツールを開発できる</b>＝仕事をコントロールする</td></tr>
+</table>
+</div>
+
+<h2>② 全体の流れ — YouTubeから実戦まで一本の導線</h2>
+<div class="card">
+  <div class="flow">
+    <div class="fbox fb0"><span class="tag">講座の前（無料）</span><b>YouTube基礎プレイリスト</b>Geminiの使い方・業務別時短はチャンネルの無料動画でカバー。ここがリスト獲得導線を兼ねる</div>
+    <div class="fbox fb1"><span class="tag">1ヶ月目 Day1–30</span><b>型 → 自分専用AI</b>頼み方・業務分解術の「型」を作り(10本)、自分の仕事を覚えたAIセットを組み上げる(20本)。<b>Day29提出</b></div>
+    <div class="fbox fb2"><span class="tag">2ヶ月目 Day31–60</span><b>開発入門</b>Cursor導入→写経で1本目→自分の業務で2本目。<b>Day60ツール提出</b></div>
+    <div class="fbox fb3"><span class="tag">3ヶ月目 Day61–90</span><b>開発実践</b>「何を作るべきか」を自分で決めて3本目→応用→出口（副業・キャリア）→<b>Day88卒業制作</b></div>
+    <div class="fbox fb3" style="background:#6a4c93;"><span class="tag">4ヶ月目〜（講座後）</span><b>実戦開発</b>壁打ち伴走で自分の業務のツールを作り続ける</div>
+  </div>
+  <div class="stairs" style="margin-top:16px;">
+    <div class="stair s1"><div class="t">第1章【型】</div><div class="d">なんとなく使う<br>→AIに任せる「自分の型」を持つ</div><div class="days">Day 1–10</div></div>
+    <div class="stair s2"><div class="t">第2章【自分専用AI】</div><div class="d">汎用AIどまり<br>→<b>自分の仕事を覚えたAI</b>が完成</div><div class="days">Day 11–30</div></div>
+    <div class="stair s3"><div class="t">第3章【開発入門】</div><div class="d">開発は無理<br>→<b>自分のツールが動く</b></div><div class="days">Day 31–60</div></div>
+    <div class="stair s4"><div class="t">第4章【開発実践】</div><div class="d">作れる<br>→<b>何を作るか自分で決めて作れる</b></div><div class="days">Day 61–90</div></div>
+    <div class="stair s5"><div class="t">実戦開発</div><div class="d">仕事を自分でコントロールする<br>（壁打ち伴走）</div><div class="days">4ヶ月目〜</div></div>
+  </div>
+</div>
+
+<h2>③ 全90レッスン一覧（タイトル・内容・宿題）</h2>
+
+<div class="chap c1">
+  <div class="chap-head"><span class="ct">第1章【型】AIに任せる「自分の型」を作る</span><span class="cg">Day1–10 ／ ゴール: 翻訳の型（頼み方・業務分解・チェック）を持つ</span></div>
+  <table>
+    <tr><th>Day</th><th>タイトル</th><th>内容</th><th>宿題（提出物）</th></tr>
+    <tr><td class="day">1</td><td class="tt">この講座への招待状: ゴールと全体マップ</td><td>目指すゴール（自分専用AIを作り、自分専用ツールを開発して仕事をコントロールする）と4章の階段を見せる。ツールの操作は変わっても、身につけるのは変わらない「考え方と型」だと約束する。基礎操作はYouTubeの基礎プレイリストでカバーする前提も伝える。</td><td class="hw">自己紹介＋「3ヶ月後どうなりたいか」1行</td></tr>
+    <tr><td class="day">2</td><td class="tt">学び方の進め方ガイド</td><td>「動画5分＋実践10〜30分」という1日の進め方と宿題提出のリズム、遅れても自分のペースでOKの設計、配布物・会員サイトの案内、質問のしかた。基礎でつまずいたら基礎プレイリスト＋質問で拾う体制。（サポートの提供形式は確定後に反映）</td><td class="hw">受け取り確認＋基礎チェックリストの自己診断（提出の練習）</td></tr>
+    <tr><td class="day">3</td><td class="tt">会社で安全に使うルール</td><td>業務情報の入れていい/ダメの仕分けと、AI生成物の著作権・商用利用の要点を整理。以降すべての回の安全基準。細かい規約・社内規程は配布の安全チェックリストで補完。</td><td class="hw">自分の業務情報を○△×に仕分け</td></tr>
+    <tr><td class="day">4</td><td class="tt">頼み方の型①: 依頼を「目的・材料・形式」に分解する</td><td>プロンプト以前の「依頼の整理術」としての頼み方の型を学ぶ。</td><td class="hw">型に当てはめた依頼文を1つ</td></tr>
+    <tr><td class="day">5</td><td class="tt">頼み方の型②: テンプレ化して資産にする</td><td>型を自分の業務用に改造し、テンプレとして貯めて資産にする。毎回ゼロから書かない状態を作る。</td><td class="hw">マイテンプレ1号</td></tr>
+    <tr><td class="day">6</td><td class="tt">業務分解術①: 仕事を「作業」に分解する</td><td>仕事を「作業」に分解する。自分専用AI・ツール開発すべての土台になる講座の背骨。</td><td class="hw">自分の業務1つの分解シート</td></tr>
+    <tr><td class="day">7</td><td class="tt">業務分解術②: AIに任せる作業を見極める</td><td>AIに任せる作業を見極める目を養う。AIを「最強の部下」として使い、自分は指示・判断・改善に回る。</td><td class="hw">分解シートにAI担当マークを付ける</td></tr>
+    <tr><td class="day">8</td><td class="tt">業務分解術③: 1週間をAI前提に再設計する</td><td>1週間の仕事をAI前提で再設計し、浮く時間の全体像を見る。このプランはDay24の中間ワークで実運用して答え合わせする。</td><td class="hw">再設計した1週間プラン</td></tr>
+    <tr><td class="day">9</td><td class="tt">AIの答えを信じて失敗しないチェック術</td><td>鵜呑みにせず失敗しないチェック術。安心して任せる線引きを作る。</td><td class="hw">自分の業務での確認ポイント3つ</td></tr>
+    <tr><td class="day">10</td><td class="tt">第1章のまとめ: 浮く時間を見積もる</td><td>型がそろったことを確認し、Day8の再設計プランから「浮くはずの時間」を時給換算で見積もる。実測はDay24の中間ワークで行う。</td><td class="hw">浮く時間の見積もりシート</td></tr>
+  </table>
+</div>
+
+<div class="chap c2">
+  <div class="chap-head"><span class="ct">第2章【自分専用AI】自分の仕事を覚えたAIを作る</span><span class="cg">Day11–30 ／ ゴール: 自分専用AIセットの完成＝1ヶ月目の山</span></div>
+  <table>
+    <tr><th>Day</th><th>タイトル</th><th>内容</th><th>宿題（提出物）</th></tr>
+    <tr><td class="day">11</td><td class="tt">「自分専用AI」とは何か: ゴールと完成形デモ</td><td>汎用AIと「自分の仕事を覚えたAI」の違いをデモで見せ、1ヶ月目の到達点を約束する。</td><td class="hw">デモを見た感想＋作りたい自分専用AI1行</td></tr>
+    <tr><td class="day">12</td><td class="tt">Gem入門: カスタムAIの「器」を知る</td><td>GeminiのGemの仕組みを知る。指示とナレッジで自分専用になることを理解し、無料版でどこまでできるか・有料版が要る場面も整理。</td><td class="hw">Gemの画面を開いたスクショ</td></tr>
+    <tr><td class="day">13</td><td class="tt">はじめてのGem: 最初の1体を作る</td><td>一緒に最初のGemを作り、小さくても「自分専用」が動く体験を作る。</td><td class="hw">最初のGem作成スクショ</td></tr>
+    <tr><td class="day">14</td><td class="tt">指示文（カスタム指示）の書き方の型</td><td>役割・前提・出力形式の3点で安定させる指示文の型を学ぶ。Day5のマイテンプレを指示文に発展させる。</td><td class="hw">型に沿った指示文を1本</td></tr>
+    <tr><td class="day">15</td><td class="tt">自分の業務プロフィールをAIに教える</td><td>自分の仕事・役割・よくある業務を教えるプロフィール作り。「あなたの場合」を出せるAIの土台。</td><td class="hw">業務プロフィールシート</td></tr>
+    <tr><td class="day">16</td><td class="tt">業務知識の棚卸し①: 仕事のルール・手順を書き出す</td><td>Day6〜8の業務分解シートを元に、AIに教えたいルール・手順を書き出す。</td><td class="hw">業務ルール・手順の書き出し（1業務分）</td></tr>
+    <tr><td class="day">17</td><td class="tt">業務知識の棚卸し②: AIに渡せる形に整える</td><td>書き出した業務知識をAIが読める形（ナレッジ）に整える。</td><td class="hw">ナレッジ化した業務知識（1業務分）</td></tr>
+    <tr><td class="day">18</td><td class="tt">メールAI①: 自分の文体を覚えさせる</td><td>ここからの業務別AIは自分に必要なものから優先してよい（取捨選択OK）と伝えたうえで、自分の文体・署名・言い回しを覚えさせたメール専用AIを作り始める。</td><td class="hw">文体を覚えさせた出力サンプル</td></tr>
+    <tr><td class="day">19</td><td class="tt">メールAI②: 相手別・場面別の型を組み込む</td><td>社内・社外・お詫び・お願いなど場面別の型を組み込み、実戦投入。</td><td class="hw">メールAIで作った実メール1本</td></tr>
+    <tr><td class="day">20</td><td class="tt">文書AI: 報告書・稟議書の型を覚えさせる</td><td>自社の報告書・稟議書の型を覚えさせた文書AIを作る。</td><td class="hw">文書AIの出力1本</td></tr>
+    <tr><td class="day">21</td><td class="tt">資料AI: 構成の型と会社のフォーマットを覚えさせる</td><td>よく作る資料の構成パターンと自社フォーマット・トーンを覚えさせた資料AIを作る。</td><td class="hw">自社フォーマットでの出力1枚</td></tr>
+    <tr><td class="day">22</td><td class="tt">会議AI: 議事録・事前準備を任せる</td><td>議事録の整形・会議の事前準備を任せる会議AIを作る。</td><td class="hw">会議AIの実践記録</td></tr>
+    <tr><td class="day">23</td><td class="tt">調査AI: 要約・情報収集の型を組み込む</td><td>自分の調査パターン（観点・出力形式）を覚えさせた調査AIを作る。</td><td class="hw">調査AIの実践記録</td></tr>
+    <tr><td class="day">24</td><td class="tt">【中間ワーク】作ったAIで1週間回してみる</td><td>ここまでの専用AIだけで1週間業務を回す実験。Day8プランの答え合わせをし、浮いた時間を実測して時給換算する。</td><td class="hw">1週間運用の記録（浮いた時間の実測・時給換算）</td></tr>
+    <tr><td class="day">25</td><td class="tt">精度を上げる: ブレの直し方と原因の切り分け</td><td>出力がブレるときの指示文の改善と、期待と違う原因（指示・ナレッジ・頼み方）の切り分け方。</td><td class="hw">改善前後の出力比較</td></tr>
+    <tr><td class="day">26</td><td class="tt">NotebookLM活用: 自分の資料を丸ごとAIに読ませる</td><td>業務資料・マニュアルを読み込ませ「自分の資料に詳しいAI」を作る。</td><td class="hw">自分の資料への質問結果</td></tr>
+    <tr><td class="day">27</td><td class="tt">AI軍団の設計図と1日のフロー組み込み</td><td>複数の専用AIの使い分け設計図を作り、1日の流れのどこでどのAIを使うかを決めて習慣化。</td><td class="hw">AI軍団の一覧表＋AI込みの1日フロー図</td></tr>
+    <tr><td class="day">28</td><td class="tt">【総仕上げ】自分専用AIセットを組み上げる</td><td>Day27の設計図をもとに、業務全体を見渡して不足している専用AIを作り足し、「自分専用AIセット」として組み上げ・調整する。</td><td class="hw">組み上げたAIセットのスクショ</td></tr>
+    <tr class="milestone"><td class="day">29</td><td class="tt">自分専用AIセット完成: 提出</td><td>Day24からの日常使用で検証してきた自分専用AIセットを最終調整して提出する。1ヶ月目の到達点。</td><td class="hw">自分専用AIセットの提出（中間制作物）</td></tr>
+    <tr><td class="day">30</td><td class="tt">第2章のまとめ: AIが「道具」から「相棒」になった</td><td>1ヶ月の変化を振り返り、2ヶ月目からの「ツール開発」への招待状を受け取る。</td><td class="hw">ビフォーアフター宣言＋開発編への意気込み</td></tr>
+  </table>
+</div>
+
+<div class="chap c3">
+  <div class="chap-head"><span class="ct">第3章【開発入門】はじめての自分ツール</span><span class="cg">Day31–60 ／ ゴール: ツール1号・2号が動く＝2ヶ月目の山</span></div>
+  <table>
+    <tr><th>Day</th><th>タイトル</th><th>内容</th><th>宿題（提出物）</th></tr>
+    <tr><td class="day">31</td><td class="tt">非エンジニアがツールを作れる時代（50本作った方法論）</td><td>非エンジニアのルナがツールを50本作ってきた方法論を語る。「自分にも作れる」の壁を壊す。</td><td class="hw">「作れたら嬉しいツール」を妄想で3つ</td></tr>
+    <tr><td class="day">32</td><td class="tt">「開発できる」と人生がどう変わるか</td><td>開発で働き方が変わる実例。開発体験で激変した人たちの話。</td><td class="hw">3つから本命1つを選ぶ</td></tr>
+    <tr><td class="day">33</td><td class="tt">ツール開発の全体像: 何を・どう作るのか</td><td>全体像を専門用語なしで掴む。専用AI（Gem）とツール開発の違い・つながりも整理。</td><td class="hw">全体像クイズ（理解度確認）</td></tr>
+    <tr><td class="day">34</td><td class="tt">Cursorとは何か: なぜこのツールなのか</td><td>Cursorとは何か、なぜこのツールかを説明する。会社PCにインストールできない場合の考え方（私物PCでの学習を基本とする等）にも触れる。</td><td class="hw">Cursor公式ページを見た感想1行＋自分はどのPCで学ぶか</td></tr>
+    <tr><td class="day">35</td><td class="tt">課金の判断: 浮いた時間と天秤にかける</td><td>課金はDay24で実測した時給換算の実績と天秤にかけて判断する。</td><td class="hw">自分の時給換算で課金判断を書く</td></tr>
+    <tr><td class="day">36</td><td class="tt">Cursorインストール・初期設定</td><td>インストールと初期設定を画面つきで一緒に進める。</td><td class="hw">インストール完了スクショ</td></tr>
+    <tr><td class="day">37</td><td class="tt">日本語で使うための設定</td><td>英語UIを日本語で快適に使う設定を整え、英語の恐怖を解除する。</td><td class="hw">設定完了スクショ</td></tr>
+    <tr><td class="day">38</td><td class="tt">画面の見方: 怖くないターミナル入門</td><td>ターミナルの画面の見方を学び、怖さをなくす。指定コマンドを1つ実行。</td><td class="hw">指定コマンド実行のスクショ</td></tr>
+    <tr><td class="day">39</td><td class="tt">実行環境のセットアップ: 「動かせる」状態を作る</td><td>書いたコードを動かすための実行環境（Python等）を画面つきで一緒に準備する。「Cursorはあるのに動かない」を防ぐ準備回。</td><td class="hw">環境確認コマンドの実行スクショ</td></tr>
+    <tr><td class="day">40</td><td class="tt">AIに作ってもらう感覚: 最初の「動いた！」体験</td><td>AIに作ってもらう感覚を掴む最初の「動いた！」体験。</td><td class="hw">最初の成果物のスクショ</td></tr>
+    <tr><td class="day">41</td><td class="tt">はじめてのツール写経①: 何を作るか（題材説明）</td><td>写経で作る1本目の題材を説明。完成形を先に見せてゴールを示す。</td><td class="hw">題材の理解確認（1問）</td></tr>
+    <tr><td class="day">42</td><td class="tt">写経②: AIへの最初の指示</td><td>AIへの最初の指示を出す。指示文の書き方をなぞって覚える。</td><td class="hw">指示文とAIの返答スクショ</td></tr>
+    <tr><td class="day">43</td><td class="tt">写経③: 動かしてみる</td><td>作ったものを実際に動かし、自分のツールが形になって動く瞬間を体験する。</td><td class="hw">動いた画面のスクショ</td></tr>
+    <tr><td class="day">44</td><td class="tt">写経④: エラーが出た！直し方の基本</td><td>エラーの直し方の基本。エラーは怖くないことを体感する。</td><td class="hw">エラー→解決の記録</td></tr>
+    <tr><td class="day">45</td><td class="tt">写経⑤: 完成。「動いた」体験の振り返り</td><td>写経ツールを完成させ、「動いた」体験を自信に変える。</td><td class="hw">ツール1号完成報告</td></tr>
+    <tr><td class="day">46</td><td class="tt">「動けばいい」開発: 完璧主義と常識を捨てる</td><td>完璧主義を捨てる「動けばいい」開発の考え方。エンジニアの常識に縛られない非エンジニアの強みを活かす。</td><td class="hw">「これでいい」と割り切った点を1つ</td></tr>
+    <tr><td class="day">47</td><td class="tt">詰まったときのAIへの聞き方①: エラー文をそのまま貼る</td><td>Day44で体験したエラー対応を「型」として一般化。エラー文をそのまま貼って聞けば大半は解決する。</td><td class="hw">実践記録1件</td></tr>
+    <tr><td class="day">48</td><td class="tt">聞き方②: 「何がしたいか」から聞き直す</td><td>「何がしたいか」から聞き直す型。質問の引き出しを増やす。</td><td class="hw">実践記録1件</td></tr>
+    <tr><td class="day">49</td><td class="tt">小さく直す・小さく足す: 改修の進め方</td><td>改修の進め方を学び、ツール1号に機能を1つ追加する。</td><td class="hw">ツール1号に機能を1つ追加</td></tr>
+    <tr><td class="day">50</td><td class="tt">ツールの保管庫を作る: ファイル整理とGitHub入門</td><td>ファイル整理と、GitHubに「自分のツールの保管庫」（リポジトリ）を作ってツール1号を保存するところまで。難しい操作はAIに聞きながらでOK。</td><td class="hw">GitHubに上げたツール1号のスクショ</td></tr>
+    <tr><td class="day">51</td><td class="tt">2本目の題材を自分の業務から選ぶ</td><td>業務分解シート（Day6〜8）とAI軍団の設計図（Day27）から「ツール化すべき作業」を見つける。最初は小さな定型作業から選ぶのが完走のコツ。</td><td class="hw">2本目の題材宣言</td></tr>
+    <tr><td class="day">52</td><td class="tt">2本目開発①: 要件をAIと一緒に固める</td><td>要件をAIと固める。作る前の整理のしかたを学ぶ。</td><td class="hw">要件メモ</td></tr>
+    <tr><td class="day">53</td><td class="tt">2本目開発②: 作る</td><td>2本目を実際に作る。1本目との違いは「自分の業務」であること。</td><td class="hw">途中経過スクショ</td></tr>
+    <tr><td class="day">54</td><td class="tt">2本目開発③: 直す・仕上げる</td><td>動かして直して仕上げ、自分の業務用ツールを完成させる。</td><td class="hw">動いた画面のスクショ</td></tr>
+    <tr><td class="day">55</td><td class="tt">2本目開発④: 業務で実際に使ってみる</td><td>完成したツールを業務で使い、浮いた時間を記録する。</td><td class="hw">使ってみた感想・浮いた時間</td></tr>
+    <tr><td class="day">56</td><td class="tt">自動化パターン集①: ファイル処理・データ変換</td><td>ファイル処理・データ変換のパターン。自分の業務への当てはめを探す。</td><td class="hw">業務に当てはまるパターンを選ぶ</td></tr>
+    <tr><td class="day">57</td><td class="tt">自動化パターン集②: 文書・レポートの自動生成</td><td>文書・レポートの自動生成パターンを学ぶ。</td><td class="hw">業務に当てはまるパターンを選ぶ</td></tr>
+    <tr><td class="day">58</td><td class="tt">自動化パターン集③: 通知・チェック・定期実行</td><td>通知・チェック・定期実行のパターンを学ぶ。</td><td class="hw">業務に当てはまるパターンを選ぶ</td></tr>
+    <tr><td class="day">59</td><td class="tt">壁打ちの質問術: サポートを使い倒す</td><td>壁打ち・質問サポートの使い倒し方。質問の型を覚えて自走力を上げる。</td><td class="hw">質問を1件投げてみる</td></tr>
+    <tr class="milestone"><td class="day">60</td><td class="tt">第3章のまとめ: 自分のツールを提出する</td><td>2ヶ月目の卒業。ツール1号・2号を提出し、成長を確認する。</td><td class="hw">ツール提出（中間制作物）</td></tr>
+  </table>
+</div>
+
+<div class="chap c4">
+  <div class="chap-head"><span class="ct">第4章【開発実践】自分に必要なものを見つけて作る</span><span class="cg">Day61–90 ／ ゴール: 卒業制作の提出 → 4ヶ月目から実戦開発へ</span></div>
+  <table>
+    <tr><th>Day</th><th>タイトル</th><th>内容</th><th>宿題（提出物）</th></tr>
+    <tr><td class="day">61</td><td class="tt">「何を作るべきか」の整理法①: 仕事の棚卸し</td><td>「何を作るべきか」を見つけるため、Day6〜8の業務分解シートを開発者の目で見直すところから仕事の棚卸しを始める。</td><td class="hw">棚卸しシート前半</td></tr>
+    <tr><td class="day">62</td><td class="tt">整理法②: 痛みの大きい作業の見つけ方</td><td>棚卸しから痛みの大きい作業を見つける方法を学ぶ。</td><td class="hw">痛みランキングTOP3</td></tr>
+    <tr><td class="day">63</td><td class="tt">整理法③: 作るものを1つに決める</td><td>作るものを1つに決める。3本目＝卒業制作のベースになるツールの企画を宣言する。</td><td class="hw">3本目の企画宣言</td></tr>
+    <tr><td class="day">64</td><td class="tt">3本目開発①: 企画をAIと固める</td><td>企画をAIと固め、目的と完成条件を言葉にする。</td><td class="hw">企画メモ</td></tr>
+    <tr><td class="day">65</td><td class="tt">3本目開発②: 設計（どう動けばいいか）</td><td>どう動けばいいかの設計をAIと一緒に行う。</td><td class="hw">設計メモ</td></tr>
+    <tr><td class="day">66</td><td class="tt">3本目開発③: 実装</td><td>3本目を実装する。詰まったら聞き方の型で進める。</td><td class="hw">途中経過スクショ</td></tr>
+    <tr><td class="day">67</td><td class="tt">3本目開発④: テスト・手直し</td><td>テストと手直しを行い、ちゃんと動く状態に仕上げる。</td><td class="hw">動いた画面のスクショ</td></tr>
+    <tr><td class="day">68</td><td class="tt">3本目開発⑤: 業務に組み込む</td><td>完成したツールを業務に組み込み、運用を開始する。ここからの運用記録が卒業制作の磨き上げ材料になる。</td><td class="hw">運用開始報告</td></tr>
+    <tr><td class="day">69</td><td class="tt">ツールを育てる: 使いながら改善する</td><td>使いながら改善する「ツールを育てる」考え方。3本目の運用で気づいた改善点を記録する。</td><td class="hw">改善点リスト</td></tr>
+    <tr><td class="day">70</td><td class="tt">ツールを増やす: 横展開と50本への道</td><td>1本のツールを横展開して増やす考え方と、ツールが増える人の習慣（ルナの50本の実例マップ）を学ぶ。</td><td class="hw">横展開アイデア2つ＋「次の5本」リスト</td></tr>
+    <tr><td class="day">71</td><td class="tt">壊しても大丈夫: バックアップと復旧</td><td>ツールが増えてきた段階で、GitHub（Day50の保管庫）を使ったバージョン管理＝履歴を残す・壊れたら前の状態に戻す方法を学ぶ。「失敗しても戻せる」安心を作る。</td><td class="hw">ツール一式をGitHubへバックアップした報告</td></tr>
+    <tr><td class="day">72</td><td class="tt">成果の見える化: あなたの時間はいくら浮いたか</td><td>ここまでで浮いた時間を集計し、時給換算で成果を見える化する。</td><td class="hw">累計時短レポート</td></tr>
+    <tr><td class="day">73</td><td class="tt">ケーススタディ①: 事務職のツール活用例</td><td>事務職のケーススタディ。自分との共通点を探す。</td><td class="hw">自分に近いケースの感想＋3本目の運用ログ1行</td></tr>
+    <tr><td class="day">74</td><td class="tt">ケーススタディ②: 営業職のツール活用例</td><td>営業職のケーススタディ。</td><td class="hw">自分に近いケースの感想＋3本目の運用ログ1行</td></tr>
+    <tr><td class="day">75</td><td class="tt">ケーススタディ③: 企画・管理職のツール活用例</td><td>企画・管理職のケーススタディ。</td><td class="hw">自分に近いケースの感想＋3本目の運用ログ1行</td></tr>
+    <tr><td class="day">76</td><td class="tt">応用①: スプレッドシート・Excelと連携する</td><td>スプレッドシート・Excelと連携する応用を学ぶ。</td><td class="hw">業務に当てはまるか検討メモ＋3本目の運用ログ1行</td></tr>
+    <tr><td class="day">77</td><td class="tt">応用②: ブラウザ操作・Webの定型作業を自動化</td><td>ブラウザ操作・Webの定型作業を自動化する応用を学ぶ。</td><td class="hw">業務に当てはまるか検討メモ＋3本目の運用ログ1行</td></tr>
+    <tr><td class="day">78</td><td class="tt">応用③: 社内に配れる「みんなのツール」にする</td><td>自分のツールを社内に配れる形にする応用を学ぶ。</td><td class="hw">業務に当てはまるか検討メモ＋3本目の運用ログ1行</td></tr>
+    <tr><td class="day">79</td><td class="tt">出口①: AIスキルが収入になる仕組み</td><td>スキル→収入の経路（売り方マップ）。誇大なしの現実的な階段で見せる。</td><td class="hw">興味のある経路を1つ選ぶ</td></tr>
+    <tr><td class="day">80</td><td class="tt">出口②: 自分に合う副業の選び方</td><td>時間・家族・本業との兼ね合いで自分に合う副業を選ぶ。</td><td class="hw">自分の条件整理シート</td></tr>
+    <tr><td class="day">81</td><td class="tt">実例: 会社員×子育てで両立する働き方</td><td>会社員×子育てで両立して成果を出している人の実例。家族との時間を犠牲にしない働き方を見せる。</td><td class="hw">感想＋自分との共通点</td></tr>
+    <tr><td class="day">82</td><td class="tt">出口③: 「選ばれる側」になる: 発注側の目線</td><td>発注のプロの目線から「選ばれる側」になる方法と、実績ゼロでも行動量と成果の可視化で信頼を作る動き方。Day50・71で育てたGitHubがそのまま「作れる証拠」のポートフォリオになる。</td><td class="hw">自分の強みを発注側目線で1行</td></tr>
+    <tr><td class="day">83</td><td class="tt">最初の1件を取るまでのロードマップ</td><td>副業の最初の1件を取るまでのロードマップを作る。</td><td class="hw">自分の行動計画</td></tr>
+    <tr><td class="day">84</td><td class="tt">出口④: 社内で強くなる道</td><td>AIが使える人材としての社内キャリア。作業者でなく「AIを使いこなすディレクター側」へ。</td><td class="hw">自分の社内での見せ方メモ</td></tr>
+    <tr><td class="day">85</td><td class="tt">AIの最新情報の追い方: 学び続ける仕組み</td><td>ツールは変わり続ける前提で、講座で学んだ「考え方と型」を軸に新しいツールを乗りこなす姿勢と、最新情報の追い方を学ぶ。</td><td class="hw">自分の情報源を決める</td></tr>
+    <tr><td class="day">86</td><td class="tt">卒業制作①: 運用結果から磨き上げ計画を立てる</td><td>Day68から業務で使ってきた3本目の運用記録と改善点リスト（Day69）をもとに、卒業制作として磨き上げる計画を立てる。</td><td class="hw">磨き上げ計画（改善項目リスト）</td></tr>
+    <tr><td class="day">87</td><td class="tt">卒業制作②: 仕上げ・壁打ち活用</td><td>磨き上げ計画に沿って3本目を仕上げる。壁打ちサポートを活用して完成度を上げる。</td><td class="hw">進捗報告</td></tr>
+    <tr class="milestone"><td class="day">88</td><td class="tt">卒業制作③: 完成・提出</td><td>磨き上げた3本目を「卒業制作」として提出する。実務で使い込んだツールが完成品になる、3ヶ月の集大成。</td><td class="hw">卒業制作の提出</td></tr>
+    <tr><td class="day">89</td><td class="tt">卒業ロードマップ: 3つの道</td><td>社内で強く・副業複線・独立の3つの道から自分の道を選ぶ。</td><td class="hw">自分の道の宣言</td></tr>
+    <tr><td class="day">90</td><td class="tt">修了: 4ヶ月目からの「実戦開発」へ</td><td>3ヶ月の変化を総括し、4ヶ月目からの実戦開発（壁打ち伴走）を案内する。</td><td class="hw">修了アンケート＋4ヶ月目の実戦開発プラン</td></tr>
+  </table>
+</div>
+
+<footer>product-generator ／ 作成: 2026-06-11</footer>
+</div>
+</body>
+</html>
