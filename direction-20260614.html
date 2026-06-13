@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>商品とローンチ動画の方向性（2026-06-14）</title>
+<style>
+  :root{
+    --navy:#1f2d4d; --navy2:#2c3e6b; --teal:#1aa6a0; --amber:#f5a623;
+    --ink:#22272e; --sub:#5b6573; --line:#e3e8ef; --bg:#f4f6fa;
+    --green:#2b9d6e; --soft:#eef3fb; --softteal:#e6f6f5; --softamber:#fdf3e0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.7; padding:32px 16px;}
+  .wrap{max-width:1080px; margin:0 auto;}
+  /* header */
+  .head{background:linear-gradient(135deg,var(--navy),var(--navy2));
+    color:#fff; border-radius:18px; padding:30px 34px; position:relative; overflow:hidden;}
+  .head:after{content:""; position:absolute; right:-60px; top:-60px; width:220px; height:220px;
+    background:rgba(26,166,160,.25); border-radius:50%;}
+  .head h1{font-size:26px; letter-spacing:.02em; margin-bottom:6px; position:relative;}
+  .head .sub{font-size:14px; opacity:.85; position:relative;}
+  .head .date{position:absolute; right:30px; bottom:24px; font-size:13px; opacity:.8;}
+  /* section */
+  .sec{background:#fff; border:1px solid var(--line); border-radius:16px;
+    padding:24px 26px; margin-top:20px; box-shadow:0 2px 10px rgba(31,45,77,.04);}
+  .sec-h{display:flex; align-items:center; gap:12px; margin-bottom:16px;}
+  .num{flex:0 0 32px; height:32px; border-radius:9px; background:var(--navy);
+    color:#fff; font-weight:700; display:flex; align-items:center; justify-content:center; font-size:15px;}
+  .sec-h h2{font-size:18px; color:var(--navy);}
+  .sec-h .tag{margin-left:auto; font-size:12px; color:var(--sub);}
+  /* feedback grid */
+  .grid4{display:grid; grid-template-columns:repeat(2,1fr); gap:12px;}
+  .fb{background:var(--soft); border-left:4px solid var(--teal); border-radius:10px; padding:12px 14px;}
+  .fb b{color:var(--navy); font-size:14px;}
+  .fb p{font-size:13px; color:var(--sub); margin-top:3px;}
+  /* core */
+  .core{background:var(--softteal); border:2px dashed var(--teal); border-radius:14px;
+    padding:22px; text-align:center;}
+  .core .lbl{font-size:13px; color:var(--teal); font-weight:700; letter-spacing:.08em;}
+  .core .big{font-size:23px; font-weight:800; color:var(--navy); margin-top:6px;}
+  .core .big span{color:var(--teal);}
+  /* two col */
+  .cols{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  .col{border:1px solid var(--line); border-radius:14px; overflow:hidden;}
+  .col-h{padding:12px 16px; font-weight:700; color:#fff; font-size:15px;}
+  .col.prod .col-h{background:var(--navy);}
+  .col.video .col-h{background:var(--teal);}
+  .col-b{padding:14px 16px;}
+  .item{margin-bottom:12px;}
+  .item:last-child{margin-bottom:0;}
+  .item .t{font-size:14px; font-weight:700; color:var(--ink);}
+  .item .d{font-size:12.5px; color:var(--sub); margin-top:2px;}
+  .chip{display:inline-block; font-size:11px; background:var(--softamber); color:#a76a00;
+    border-radius:20px; padding:1px 9px; margin-left:6px; vertical-align:middle;}
+  /* flow */
+  .flow{display:flex; align-items:center; gap:10px; justify-content:center; flex-wrap:wrap;}
+  .fbox{background:var(--soft); border:1px solid var(--line); border-radius:12px;
+    padding:14px 18px; text-align:center; min-width:200px;}
+  .fbox .ft{font-weight:700; color:var(--navy); font-size:14px;}
+  .fbox .fd{font-size:12px; color:var(--sub); margin-top:3px;}
+  .arrow{font-size:24px; color:var(--teal); font-weight:700;}
+  /* arc */
+  .arc{display:flex; align-items:stretch; gap:8px; overflow-x:auto; padding-bottom:4px;}
+  .step{flex:1; min-width:120px; background:#fff; border:1px solid var(--line);
+    border-radius:12px; padding:12px; text-align:center; position:relative;}
+  .step .e{font-size:22px;}
+  .step .st{font-size:13px; font-weight:700; color:var(--navy); margin-top:4px;}
+  .step .sd{font-size:11.5px; color:var(--sub); margin-top:2px;}
+  .step.start{border-color:var(--teal); background:var(--softteal);}
+  .step.end{border-color:var(--amber); background:var(--softamber);}
+  .arcsep{display:flex; align-items:center; color:var(--teal); font-weight:700;}
+  /* rule box */
+  .rule{background:var(--softamber); border:1px solid #f0d9a8; border-radius:12px; padding:14px 18px;}
+  .rule b{color:#a76a00;}
+  .rule ul{margin:6px 0 0 18px;}
+  .rule li{font-size:13px; color:#7a5a12; margin-bottom:3px;}
+  /* status */
+  .status{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+  .scard{border-radius:12px; padding:16px 18px;}
+  .scard.now{background:var(--softteal); border:1px solid #b7e6e3;}
+  .scard.next{background:var(--soft); border:1px solid #cfdcf2;}
+  .scard h3{font-size:14px; margin-bottom:8px; display:flex; align-items:center; gap:6px;}
+  .scard.now h3{color:var(--green);}
+  .scard.next h3{color:var(--navy);}
+  .scard p{font-size:13px; color:var(--sub);}
+  .pill{display:inline-block; font-size:12px; padding:2px 10px; border-radius:20px; margin:2px 3px;}
+  .pill.ok{background:#e2f5ec; color:var(--green);}
+  .pill.wait{background:#fdeede; color:#b06a00;}
+  .foot{text-align:center; font-size:12px; color:var(--sub); margin-top:22px;}
+  @media(max-width:720px){.cols,.grid4,.status{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="head">
+    <h1>商品とローンチ動画の方向性</h1>
+    <div class="date">2026-06-14 まとめ</div>
+  </div>
+
+  <!-- 1. 起点 -->
+  <div class="sec">
+    <div class="sec-h"><div class="num">1</div><h2>起点：フィードバック（4つの軸）</h2><span class="tag">6/13 朝礼</span></div>
+    <div class="grid4">
+      <div class="fb"><b>① 普遍性</b><p>チャンネル複数展開を前提に、変わらない内容を。一時的な情報は載せない</p></div>
+      <div class="fb"><b>② 入口を広く</b><p>他チャンネルからも入れる／初心者も中級者も入って来られるように</p></div>
+      <div class="fb"><b>③ 低ハードルで「作る」</b><p>最初はハードル低く。言葉を入れるだけでアプリが作れる体験を</p></div>
+      <div class="fb"><b>④ 差別化とサポート</b><p>「他のAI講座とここが違う」。出なさすぎない・質問に答える＝裏切らない仕組み</p></div>
+    </div>
+  </div>
+
+  <!-- 2. 定めた核 -->
+  <div class="sec">
+    <div class="sec-h"><div class="num">2</div><h2>定めた核（一本化）</h2></div>
+    <div class="core">
+      <div class="lbl">商品とローンチ動画に共通する主役メッセージ</div>
+      <div class="big">初心者でも、最終的に<span>自分でシステムを作れる</span>人になる</div>
+    </div>
+  </div>
+
+  <!-- 3. 商品の全体像 -->
+  <div class="sec">
+    <div class="sec-h"><div class="num">3</div><h2>商品の全体像（90日講座）</h2><span class="tag">1日1本・動画5分＋実践／宿題つき</span></div>
+    <div class="arc">
+      <div class="step start"><div class="e">🧭</div><div class="st">① 型をつくる</div><div class="sd">AIへの頼み方・業務分解の「型」を身につける（10本）</div></div>
+      <div class="arcsep">→</div>
+      <div class="step"><div class="e">🤖</div><div class="st">② 自分専用AI</div><div class="sd">自分の仕事を覚えたAIを作る（20本）<br><span style="color:#a76a00;font-weight:700;">★自分専用AIセット</span></div></div>
+      <div class="arcsep">→</div>
+      <div class="step"><div class="e">🛠️</div><div class="st">③ はじめての開発</div><div class="sd">自分のツールを作る（30本）<br><span style="color:#a76a00;font-weight:700;">★ツール1号・2号</span></div></div>
+      <div class="arcsep">→</div>
+      <div class="step end"><div class="e">🎓</div><div class="st">④ 開発実践</div><div class="sd">必要なものを自分で作る（30本）<br><span style="color:#a76a00;font-weight:700;">★卒業制作</span></div></div>
+    </div>
+    <p style="text-align:center; font-size:13px; color:var(--sub); margin-top:12px;">
+      → 売るのは操作ではなく「<b>考え方と型</b>」。ゴール＝<b style="color:var(--teal);">自分でシステムを作れる人</b>になる</p>
+
+    <div style="margin-top:18px; padding-top:16px; border-top:1px dashed var(--line);">
+      <div style="font-size:13px; font-weight:700; color:var(--navy); margin-bottom:10px;">そして、この力がこう効いていく（はしご）</div>
+      <div class="flow">
+        <div class="fbox" style="background:var(--softteal); border-color:#b7e6e3; min-width:155px;"><div class="ft">自分で作れる</div><div class="fd">自分専用AI〜ツール開発</div></div>
+        <div class="arrow">→</div>
+        <div class="fbox" style="min-width:150px;"><div class="ft">① 時間が生まれる</div><div class="fd">面倒な作業を自動化</div></div>
+        <div class="arrow">→</div>
+        <div class="fbox" style="min-width:150px;"><div class="ft">② 本業の評価↑</div><div class="fd">速い・質が高い</div></div>
+        <div class="arrow">→</div>
+        <div class="fbox" style="min-width:150px;"><div class="ft">③ 副業につながる</div><div class="fd">収入の柱がもう1本</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. 二本柱で固めた -->
+  <div class="sec">
+    <div class="sec-h"><div class="num">4</div><h2>その核を、両側で具体化した</h2></div>
+    <div class="cols">
+      <div class="col prod">
+        <div class="col-h">商品（90日講座）を固める</div>
+        <div class="col-b">
+          <div class="item"><div class="t">ゴール（到達点）を定義</div><div class="d">自分専用AI → 自分専用ツール → 自分の業務を解決する卒業制作。「作れるようになる」の中身を具体化</div></div>
+          <div class="item"><div class="t">差別化の一行</div><div class="d">他講座＝「使い方」を教える／うち＝「作って仕事をコントロールする側」になる</div></div>
+          <div class="item"><div class="t">ゴールに向けて設計済み</div><div class="d">この到達点に届くようカリキュラムは設計済み（中身の作り込みはこの先）</div></div>
+        </div>
+      </div>
+      <div class="col video">
+        <div class="col-h">ローンチ動画を固める</div>
+        <div class="col-b">
+          <div class="item"><div class="t">骨格は活かす</div><div class="d">反応の出る構成（フック→ストーリー→問題提起→実演→面談）はそのまま。中身だけ補強</div></div>
+          <div class="item"><div class="t">「作れるようになる」を主役に</div><div class="d">入口の体験は簡単なまま、ゴールを"作れる"に引き上げ。変身ストーリーで「自分にもできる」を見せる</div></div>
+          <div class="item"><div class="t">訴求の安全確認も完了</div><div class="d">期限の見せ方・表現・面談の案内方法を整理し、誇大やズレが出ないよう整えた</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. 構造 -->
+  <div class="sec">
+    <div class="sec-h"><div class="num">5</div><h2>進め方の構造（動画は商品の鏡）</h2></div>
+    <div class="flow">
+      <div class="fbox"><div class="ft">① 商品を具体化</div><div class="fd">到達点・差別化・変身ストーリー</div></div>
+      <div class="arrow">→</div>
+      <div class="fbox"><div class="ft">② 動画の訴求を具体化</div><div class="fd">①の素材をそのまま流し込む</div></div>
+    </div>
+    <p style="text-align:center; font-size:13px; color:var(--sub); margin-top:12px;">
+      → 商品が変わったら①を直すだけで②も直る。二重管理にならず、ヒアリングで方向性が動いても傷が浅い</p>
+  </div>
+
+  <!-- 5. 変身ストーリーの弧 -->
+  <div class="sec">
+    <div class="sec-h"><div class="num">6</div><h2>動画の核：変身ストーリーの弧</h2><span class="tag">「自分にもできる」を実体験で証明</span></div>
+    <div class="arc">
+      <div class="step start"><div class="e">⏱️</div><div class="st">出発点：タイマー</div><div class="sd">最初に作ったのは"時間を測るだけ"。それくらい小さく</div></div>
+      <div class="arcsep">→</div>
+      <div class="step"><div class="e">😲</div><div class="st">びっくりするほど簡単</div><div class="sd">プログラミングなし・言葉で指示するだけ</div></div>
+      <div class="arcsep">→</div>
+      <div class="step"><div class="e">✨</div><div class="st">人生が変わる</div><div class="sd">「自分にもできた」の体感</div></div>
+      <div class="arcsep">→</div>
+      <div class="step end"><div class="e">🏭</div><div class="st">今では60本以上のツールを自作</div><div class="sd">例：動画URL1本→ショート量産→自動投稿の仕組みまで</div></div>
+    </div>
+  </div>
+
+  <!-- 7. 台本修正の内容 -->
+  <div class="sec">
+    <div class="sec-h"><div class="num">7</div><h2>ローンチ台本に入れた修正</h2><span class="tag">v1.1・全体像は維持</span></div>
+
+    <div class="grid4">
+      <div class="fb"><b>① 変身ストーリーを追加</b><p>「最初はタイマー → びっくりするほど簡単 → 人生が変わる → 今では60本以上」を自己紹介に挿入</p></div>
+      <div class="fb"><b>② 証拠ツールを1つ見せる</b><p>動画URL1本→ショート量産→自動投稿の仕組み。「最初は誰でもタイマーから」とセットで</p></div>
+      <div class="fb"><b>③「作れる人になる道」を布石</b><p>面談の継続案内に、自分専用のAI・ツールを"自分で作れる"道を一言追加</p></div>
+      <div class="fb"><b>④「売りつけない」を整合</b><p>断定をやめ「しつこい売り込みはしない／必要な人にだけ案内」に修正</p></div>
+      <div class="fb"><b>⑤「設計」を3ステップに具体化</b><p>空回りしていた「設計」を、棚卸し→当てはめ→収益化の3手順に書き換え</p></div>
+      <div class="fb"><b>⑥ 重複をカット</b><p>同じ結論の繰り返し（メソッド冒頭・ストーリー・統計）を整理して短く</p></div>
+    </div>
+
+    <p style="text-align:center; font-size:12.5px; color:var(--sub); margin-top:14px;">
+      ※トーン・数字・実演方針・章構成は変更なし</p>
+  </div>
+
+  <div class="foot">product-generator ／ 2026-06-14 ／ 内部資料（外部共有時は未決事項・内部情報を外す）</div>
+
+</div>
+</body>
+</html>
